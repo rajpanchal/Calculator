@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+<body style="background-image:url('https://vignette.wikia.nocookie.net/animal-jam-clans-1/images/d/d9/Blurred_Background_12.jpg/revision/latest?cb=20161118030655')">
+
+    <div class="container flow-text blue black-text" style="border-radius: 12px; font-family:verdana;">
+
+
+  
+      <div class="right-align z-depth-5" style="background-color: #1C5366 ; font-family:Courier ;border-radius: 12px; color: white;">
+        <h1 class="center-align">Arithematic Calculator</h1>
+         <div><a href="index.html"><button class="btn col s12 l12" style="background-color: #22BEF2; font-family:Courier ;border-radius: 12px; color: black;">About</button></a></div>
+      </div>
+
+      <div class="divider" style="margin:20px;"></div>
+
+        
+        <div class="row">
+
+                                                        <div class="col s12 l4" ><p>
+                                      <h4 style="margin-bottom: 17%;">Choose</h4>
+                  
+                                      <div><a href="basecal.html"><button class="btn col s12 l12" style="background-color: #1C5366 ; font-family:Courier ;border-radius: 12px; color: white;">Base calculator</button></a></div>
+                                      
+                                      <div><a href="tempcal.html"><button class="btn col s12 l12" style="margin: 10px 0px; background-color: #1C5366 ; font-family:Courier ;border-radius: 12px; color: white;">Temp calculator</button></a></div>
+                                      <div><a href="arithcal.html"><button class="btn col s12 l12" style="background-color: #1C5366 ; font-family:Courier ;border-radius: 12px; color: white;">Arithematic calculator</button></a></div>
+                            </p></div> 
+
+
+
+                            <div class="col s12 l8"><p>
+                                  <div> 
+                                      <p><h5>Arithematic converter</h5></p>
+                                      <div class="divider grey"></div>
+                                      <p>Enter two numbers and the operator whose operation u wanna perform ;)</p>
+
+                                  </div>
+
+
+                                    <div class="row">
+                                          <div class="col s12 l4"> <p>Enter number 1 :<input type="text" placeholder="" name="decimal" id="u1"></p> </div>               
+                                          <div class="col s12 l4" style="margin:0 0 0 10%"> <p>Enter number 2 :<input type="text" placeholder="" name="binary" id="u2"></p> </div>
+                                    </div>
+
+                                    <div class="row">
+                                          <div class="col s12 l4"><p>Enter your operator -></p></div>
+                                          <div class="col s12 l4" style="margin:2% 0 0 10%"><input type="text" placeholder="+-*/" name="number" id="u3"></div>
+                                    </div>
+                                    
+
+                                    <div class="right row">
+                                          <p><div class="col s6 l1"><button class="btn small z-depth-3" style="background-color: #1C5366 ; font-family:Courier ;border-radius: 12px; color: white;" onClick="converter()">Convert</button></div></p>
+
+                                    </div>
+
+                                   <div class="row" style="padding-top: 11%">
+                                        <div ><p style="display: inline;">Your result is:</p></div>
+                                        <div id="demo" style="display: inline; margin-left: 28%;"><p></p></div>
+                                    </div>
+                            </p></div>
+
+
+      </div>
+
+      <h4 class="center-align" style="background-color: #1C5366 ; font-family:Courier ;border-radius: 12px; color: white;">Made by Raj Panchal</h4>
+
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+
+    
+     <script>
+
+      function converter(){
+        var n1 = document.getElementById('u1').value;
+        var n2 = document.getElementById('u2').value;
+        var operator = document.getElementById('u3').value;
+
+        n1 = parseInt(n1);
+        n2 = parseInt(n2);
+
+        if(operator=='+')
+        {
+          var ans = n1 + n2;  
+          document.getElementById('demo').innerHTML = ans;
+        }
+        else if(operator=='-')
+        {
+          var ans = n1 - n2;  
+          document.getElementById('demo').innerHTML = ans;
+        }
+        else if(operator=='*')
+        {
+          var ans = n1 * n2;  
+          document.getElementById('demo').innerHTML = ans;
+        }
+        else if(operator=='/')
+        {
+          var ans = n1 / n2;  
+          document.getElementById('demo').innerHTML = ans;
+        }
+        else
+        {
+          document.getElementById('demo').innerHTML = "Bruh! ,Please enter a valid unit"
+        }
+
+      }
+
+
+     </script>
+    </body>
+  </html>

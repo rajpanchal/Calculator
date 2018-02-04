@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+
+    <body style="background-image:url('https://vignette.wikia.nocookie.net/animal-jam-clans-1/images/d/d9/Blurred_Background_12.jpg/revision/latest?cb=20161118030655')">
+
+    <div class="container flow-text blue black-text" style="border-radius: 12px; font-family:verdana;">
+
+
+  
+      <div class="right-align z-depth-5" style="background-color: #1C5366 ; font-family:Courier ;border-radius: 12px; color: white;">
+        <h1 class="center-align">Base Calculator</h1>
+        <div><a href="index.html"><button class="btn col s12 l12" style="background-color: #22BEF2; font-family:Courier ;border-radius: 12px; color: black;">About</button></a></div>
+      </div>
+
+      <div class="divider" style="margin:20px;"></div>
+
+        
+        <div class="row">
+
+                            <div class="col s12 l4" ><p>
+                                      <h4 style="margin-bottom: 17%;">Choose</h4>
+                  
+                                      <div><a href="basecal.html"><button class="btn col s12 l12" style="background-color: #1C5366 ; font-family:Courier ;border-radius: 12px; color: white;">Base calculator</button></a></div>
+                                      
+                                      <div><a href="tempcal.html"><button class="btn col s12 l12" style="margin: 10px 0px; background-color: #1C5366 ; font-family:Courier ;border-radius: 12px; color: white;">Temp calculator</button></a></div>
+                                      <div><a href="arithcal.html"><button class="btn col s12 l12" style="background-color: #1C5366 ; font-family:Courier ;border-radius: 12px; color: white;">Arithematic calculator</button></a></div>
+                            </p></div>  
+ 
+
+
+
+                            <div class="col s12 l8"><p>
+                                  <div> 
+                                      <p><h5>Base converter</h5></p>
+                                      <div class="divider grey"></div>
+                                      <p>Enter a decimal number that u want to convert to binary number ;)</p>
+
+                                  </div>
+
+
+                                    <div class="row">
+                                          <div class="col s12 l4"> <p>From Base:<input type="text" placeholder="Base:10" name="decimal" id="num1"></p> </div>               
+                                          <div class="col s12 l4" style="margin:0 0 0 10%"> <p>To Base:<input type="text" placeholder="Base:2" name="binary" id="num2"></p> </div>
+                                    </div>
+
+                                    <div class="row">
+                                          <div class="col s12 l4"><p>Enter your number -></p></div>
+                                          <div class="col s12 l4" style="margin:2% 0 0 10%"><input type="text" placeholder="Number" name="number" id="num3"></div>
+                                    </div>
+                                    
+
+                                    <div class="right row">
+                                          <p><div class="col s6 l1"><button class="btn small z-depth-3" style="background-color: #1C5366 ; font-family:Courier ;border-radius: 12px; color: white;" onClick="converter()">Convert</button></div></p>
+
+                                    </div>
+
+                                   <div class="row" style="padding-top: 11%">
+                                        <div ><p style="display: inline;">Your result is:</p></div>
+                                        <div id="demo" style="display: inline; margin-left: 28%;"><p></p></div>
+                                    </div>
+                            </p></div>
+
+
+      </div>
+
+      <h4 class="center-align" style="background-color: #1C5366 ; font-family:Courier ;border-radius: 12px; color: white;">Made by Raj Panchal</h4>
+
+      <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+      <script>
+               function converter(){
+                  var num1 = parseInt(document.getElementById('num1').value);
+                  var num2 = parseInt(document.getElementById('num2').value);
+                  var num3 = parseInt(document.getElementById('num3').value);
+                  if(num1==10&&(num2>=2) && (num2<=30))
+                  { 
+                        var i;
+                        var arr=[];
+                        while(num3!=0)
+                        {
+                          arr.push(num3%num2);
+                          num3 = parseInt(num3/num2);
+                        }
+                        arr.reverse();
+                        var y=arr.join("");
+                        document.getElementById('demo').innerHTML=y;
+                  }
+                  else if((num1>=1 && num1<=30)&&num2==10)
+                  {
+                        num3 = num3.toString();
+                        var sum=0,i,n = num3.length;
+                        for(i=0;i<n;i++)
+                        {
+                              sum = sum + (num3%10)*(num1**i);
+                              num3 = parseInt(num3/10);
+                        }
+                        document.getElementById('demo').innerHTML=sum;
+                  }
+                  else if((num1==2)&&(num2==8))
+                  {
+
+                  }
+                  else
+                  {
+                    document.getElementById('demo').innerHTML = "Other bases conversion under construction. Just anybase to 10 and 10 to any base is worsqking.";
+                  }
+               }
+      </script>
+    </body>
+  </html>
